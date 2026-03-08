@@ -1,21 +1,23 @@
-What is the difference between var, let, and const?
+## What is the difference between var, let, and const?
 
-Ans: var, let, and const are used to declare variables in JavaScript.
+***Ans:***
 
-var → It is the old way of declaring variables. It has function scope and can be redeclared.
+var, let, and const are used to declare variables in JavaScript.
 
-let → Introduced in ES6. It has block scope and cannot be redeclared in the same scope.
-
-const → Also block scoped, but its value cannot be changed after assignment.
+- **var →** It is the old way of declaring variables. It has function scope and can be redeclared.
+- **let →** Introduced in ES6. It has block scope and cannot be redeclared in the same scope.
+- **const →** Also block scoped, but its value cannot be changed after assignment.
 
 In simple terms:
 var is old, let can change, and const cannot change.
 
 
 
-What is the spread operator (...)?
+## What is the spread operator (...)?
 
-Ans: The spread operator (...) is used to expand the elements of an array or object.
+***Ans:***
+
+The spread operator (...) is used to expand the elements of an array or object.
 
 Example:
 const numbers = [1,2,3];
@@ -30,9 +32,11 @@ copy objects
 
 
 
-What is the difference between map(), filter(), and forEach()?
+## What is the difference between map(), filter(), and forEach()?
 
-Ans:These three methods work with arrays, but they have different purposes.
+***Ans:***
+
+These three methods work with arrays, but they have different purposes.
 
 map()
 Runs a function on every element
@@ -52,9 +56,11 @@ filter() → selects elements
 forEach() → just loops
 
 
-What is an arrow function?
+## What is an arrow function?
 
-Ans: An arrow function is a shorter way to write functions in JavaScript.
+***Ans:***
+
+An arrow function is a shorter way to write functions in JavaScript.
 
 Example:
 const add = (a,b) => {
@@ -70,9 +76,11 @@ callback functions
 
 
 
-What are template literals?
+## What are template literals?
 
-Ans: Template literals are used to insert variables or expressions inside a string.
+***Ans:***
+
+Template literals are used to insert variables or expressions inside a string.
 
 They use backticks ` ` instead of quotes.
 
