@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Issue Tracker</title>
+  <link rel="shortcut icon" href="/assets/github-logo.png" type="image/fab-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Tailwind & DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- Font Integration -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bg-base-100">
+
+<header class="p-4 shadow-sm bg-base-200">
+  <div class="flex justify-between items-center w-[80%] mx-auto">
+    <a class="btn btn-ghost text-xl flex items-center"><img class="w-8 mr-2" src="./assets/github-logo.png" alt="">Github Issue Tracker</a>
+    <div class="flex items-center gap-2">
+      <input type="text" placeholder="Search" id="searchInput" class="input input-bordered w-36">
+      <button class="btn btn-primary" id="searchBtn">Search</button>
+    </div>
+  </div>
+</header>
+
+<main class="mt-10 w-[80%] mx-auto">
+
+        <section class="mt-10 w-[80%] mx-auto bg-base-100">
+            <div id="tabs flex gap-2 mb-6">
+        <button class="tab active btn" onclick="showIssues('all', this)">All</button>
+        <button class="tab btn" onclick="showIssues('open', this)">Open</button>
+        <button class="tab btn" onclick="showIssues('closed', this)">Closed</button>
+        </div>
+        </section>
+
+  <div id="issueList" class="grid md:grid-cols-3 grid-cols-1 gap-4"></div>
+
+</main>
+
+<!-- Modal -->
+<div id="modal" class="hidden">
+  <div id="modalContent">
+    <button id="closeModal" class="btn btn-sm btn-circle btn-ghost float-right">X</button>
+    <div id="modalData"></div>
+  </div>
+</div>
+
+<script src="script/main.js"></script>
+</body>
+</html>

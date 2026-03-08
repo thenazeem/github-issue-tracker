@@ -1,0 +1,52 @@
+*{
+     font-family: "Poppins", sans-serif;}
+
+.tab {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-right: 5px;
+}
+
+.active {
+  background-color: #2563eb;
+  color: white;
+}
+
+.countBox {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+.issueCard{
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:15px;
+  margin-bottom:15px;
+  background:#f9f9f9;
+}
+
+.issueCard h4{
+  margin:0 0 5px 0;
+}
+
+.issueCard p{
+  margin:3px 0;
+  font-size:14px;
+}
+
+
+.highlight {
+  background-color: rgba(175, 175, 175, 0.808); 
+  color: black;               
+  padding: 2px 4px;           
+  border-radius: 2px;         
+}
+
+#modal { position: fixed; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.5); display:flex; justify-content:center; align-items:center; }
+#modalContent { background:white; padding:2rem; border-radius:0.5rem; width:90%; max-width:500px; }
+#modal.hidden { display:none; }
