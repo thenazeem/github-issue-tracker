@@ -26,10 +26,18 @@ function showIssues(type, element, searchText = "") {
   const countDiv = document.getElementById("issueCount");
   countDiv.innerHTML = `
   
-  <div class="flex gap-5 p-4 items-center">
-  <div><img class="w-[50px]" src="assets/aperture.png" alt=""></div>
+  <div class="flex flex-col md:flex-row justify-between gap-2 p-4  items-center">
+  <div class="flex items-center md:text-left gap-2 ">
+    <div><img class="w-[50px]" src="assets/aperture.png" alt=""></div>
   <div class="text-2xl font-semibold"><span><strong>${filtered.length}</strong> Issues</span> </br>
-  <span class=" text-sm text-gray-500">Track and manage your project issues</span> </div>
+
+   </div>
+   
+  </div>
+  <span class=" text-sm text-center text-gray-500">Track and manage your project issues</span>
+  <div class="text-sm">
+    <a class="mr-4 text-green-500"> Open</a> <a class="text-red-500">closed</a>
+  </div>
   </div>
   
 `;
@@ -54,54 +62,36 @@ priorityColor = "bg-green-200 text-green-600";
 
 return `
 
-<div onclick="openIssue(${issue.id})"
-class="bg-base-200 rounded-xl shadow-md border-t-4 ${borderColor} p-5 hover:shadow-xl transition cursor-pointer">
+        <div onclick="openIssue(${issue.id})"
+        class="bg-base-200 rounded-xl shadow-md border-t-4 ${borderColor} p-5 hover:shadow-xl transition cursor-pointer">
 
-<div class="flex justify-between items-center mb-4">
+        <div class="flex justify-between items-center mb-4">
 
-<div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-<i class="fa-solid ${statusIcon}"></i>
-</div>
+        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+        <i class="fa-solid ${statusIcon}"></i>
+        </div>
 
-<span class="px-4 py-1 rounded-full text-sm font-semibold ${priorityColor}">
-${issue.priority.toUpperCase()}
-</span>
+        <span class="px-4 py-1 rounded-full text-sm font-semibold ${priorityColor}">
+        ${issue.priority.toUpperCase()}
+        </span> </div>
+        <h2 class="text-xl font-bold text-gray-700 mb-2">
+        ${issue.title}
+        </h2>
+        <p class="text-gray-500 mb-4">
+        ${issue.description.slice(0,90)}...
+        </p>
+        <div class="flex gap-2 mb-4">
+        <span class="px-3 py-1 rounded-full border border-red-300 text-red-500 text-sm">
+        🐞 BUG </span>
+        <span class="px-3 py-1 rounded-full border border-yellow-400 text-yellow-600 text-sm">
+        ⚙ HELP WANTED</span></div> <hr class="mb-3">
+        <div class="flex justify-between text-gray-500 text-sm">
+        <p>#${issue.id} by ${issue.author}</p>
+        <p>${new Date(issue.createdAt).toLocaleDateString()}</p>
+        </div>
+        </div>
 
-</div>
-
-<h2 class="text-xl font-bold text-gray-700 mb-2">
-${issue.title}
-</h2>
-
-<p class="text-gray-500 mb-4">
-${issue.description.slice(0,90)}...
-</p>
-
-<div class="flex gap-2 mb-4">
-
-<span class="px-3 py-1 rounded-full border border-red-300 text-red-500 text-sm">
-🐞 BUG
-</span>
-
-<span class="px-3 py-1 rounded-full border border-yellow-400 text-yellow-600 text-sm">
-⚙ HELP WANTED
-</span>
-
-</div>
-
-<hr class="mb-3">
-
-<div class="flex justify-between text-gray-500 text-sm">
-
-<p>#${issue.id} by ${issue.author}</p>
-
-<p>${new Date(issue.createdAt).toLocaleDateString()}</p>
-
-</div>
-
-</div>
-
-`;
+        `;
 
 }).join('');
 }
